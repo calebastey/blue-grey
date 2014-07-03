@@ -11,6 +11,7 @@ import com.badlogic.gdx.graphics.OrthographicCamera;
 import com.grassllama.bluegrey.drawables.BoardRenderer;
 import com.grassllama.bluegrey.drawables.Drawable;
 import com.grassllama.bluegrey.model.Board;
+import com.grassllama.bluegrey.utils.TextBasedBoardBuilder;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -32,7 +33,7 @@ public class Main implements ApplicationListener {
         batch = new SpriteBatch();
 
         // create the raindrops array and spawn the first raindrop
-        this.board = new Board(20,20);
+        this.board = new TextBasedBoardBuilder().createBoard("simple.txt");
     }
 
     @Override

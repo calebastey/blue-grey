@@ -3,5 +3,5 @@ package com.grassllama.bluegrey.model.tile;
 /**
  * @author Caleb
  */
-public class AbstractTile implements Tile {
+public abstract class AbstractTile implements Tile {
 }

@@ -20,17 +20,15 @@ public class BoardRenderer implements Drawable {
     @Override
     public void draw(Camera camera) {
         this.shapeRenderer.setProjectionMatrix(camera.combined);
-        this.shapeRenderer.begin(ShapeRenderer.ShapeType.Line);
-        for (int i = 0; i < board.getWidth(); i++) {
-            for (int j = 0; j < board.getHeight(); j++) {
+        for (int i = 0; i < board.getHeight(); i++) {
+            for (int j = 0; j < board.getWidth(); j++) {
                 TileRenderer tileRenderer = new TileRenderer(board.getTile(i,j));
-                tileRenderer.setX(i*20);
-                tileRenderer.setY(j*20);
+                tileRenderer.setX(j*20);
+                tileRenderer.setY(i*20);
                 tileRenderer.setShapeRenderer(this.shapeRenderer);
                 tileRenderer.draw(camera);
             }
         }
-        this.shapeRenderer.end();
     }
 
     public void setBoard(Board board) {
